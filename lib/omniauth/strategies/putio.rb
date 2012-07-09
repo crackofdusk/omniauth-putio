@@ -13,12 +13,32 @@ module OmniAuth
         :token_method  => :get
       }
 
-      # Unfortunately, the Put.io v2 API exposes no kind of user information at
-      # this point.
+      # The user name is the display name ("how people will see you when you
+      # share stuff") and can be modified.
+      # I think it's more likely to change than the email address.
       
-      uid {}
+      uid { raw_info['mail'] }
 
-      info {}
+      info do
+        {
+          :name  => raw_info['username'],
+          :email => raw_info['mail']
+        }
+      end
+
+
+      extra do
+        {
+          :raw_info => raw_info
+        }
+      end
+
+      def raw_info
+        access_token.options[:mode] = :query
+        access_token.options[:param_name] = 'oauth_token'
+
+        @raw_info ||= access_token.get('/v2/account/info').parsed
+      end
       
     end
   end

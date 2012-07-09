@@ -2,12 +2,6 @@
 
 OmniAuth 1.0 strategy for the Put.io v2 API.
 
-# Important
-
-The Put.io v2 API doesn't expose any kind of user information at this point. Because of that, this strategy does not comply with the [OmniAuth auth hash shema](https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema) requirements. To be precise, the `uid` and `info` fields are nil.
-
-On the upside, the auth hash *does* contain the OAuth 2.0 credentials returned by Put.io (the access token is in `credentials['token']`). That means you can still use this strategy to obtain OAuth 2.0 credentials although you can't associate them to a specific Put.io user.
-
 # Usage
 
 In a Rack application:
