@@ -37,7 +37,7 @@ module OmniAuth
         access_token.options[:mode] = :query
         access_token.options[:param_name] = 'oauth_token'
 
-        @raw_info ||= access_token.get('/v2/account/info').parsed
+        @raw_info ||= access_token.get('/v2/account/info').parsed['info']
       end
       
     end
