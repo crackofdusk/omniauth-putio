@@ -1,6 +1,6 @@
 # OmniAuth Put.io
 
-OmniAuth 1.0 strategy for the Put.io v2 API.
+OmniAuth strategy for the Put.io v2 API.
 
 # Usage
 
@@ -25,7 +25,7 @@ The Put.io authentication endpoint in your app is `/auth/putio'.
 
 # License
 
-Copyright (c) 2012 Dimiter Petrov
+Copyright (c) 2013 Dimiter Petrov
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
