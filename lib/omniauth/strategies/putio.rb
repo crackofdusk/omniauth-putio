@@ -12,7 +12,9 @@ module OmniAuth
         :token_url     => '/v2/oauth2/access_token',
         :token_method  => :get
       }
-
+      
+      option :provider_ignores_state, true
+      
       # The user name is the display name ("how people will see you when you
       # share stuff") and can be modified.
       # I think it's more likely to change than the email address.
